@@ -33,6 +33,7 @@ import java.sql.*;
 import java.util.HashMap;
 import java.util.Map;
 
+import javax.swing.JFileChooser;
 
 public class building_dom{
 	
@@ -74,8 +75,21 @@ public class building_dom{
 	      	
 			try{
 				// need an interface to choose file
-				String filepath="";
-				String file=filepath+"before_change.osm";
+				//all rite i m working in it
+				
+				JFileChooser fc= new JFileChooser();
+    			int ret = fc.showOpenDialog(null);
+
+                if (ret== JFileChooser.APPROVE_OPTION) 
+                {
+             		File file_file = fc.getSelectedFile();
+             		String file = file_file.getAbsolutePath();
+             
+            	}
+
+
+				// String filepath="";
+				// String file=filepath+"before_change.osm";
 
 				DocumentBuilderFactory docFactory = DocumentBuilderFactory.newInstance();
 				DocumentBuilder docBuilder = docFactory.newDocumentBuilder();
